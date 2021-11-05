@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="col-4 m-5" *ngFor="let char of character">
+      <div class="card">
+        <img src="{{ char.img }}" alt="character" class="img-fluid" />
+
+        <div class="card-title text-center mt-3">Nombre: {{ char.name }}</div>
+        <div class="card-title text-center mt-3">
+          Nickname: {{ char.nickname }}
+        </div>
+        <div class="card-title text-center mt-3">
+          Birthday: {{ char.birthday }}
+        </div>
+        <a routerLink="/characters" class="btn btn-dark">Volver</a>
+      </div>
+    </div>
+  </div>
+</div>
