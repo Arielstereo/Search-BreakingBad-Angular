@@ -9,7 +9,7 @@ import { CharacterService } from 'src/app/service/character.service';
 })
 
 export class CharactersComponent implements OnInit {
-  characters: Array<{name: string, img: string, char_id: number}> = [];
+  characters: any =[];
   constructor(private service: CharacterService) { }
   
   async ngOnInit() {
@@ -19,10 +19,10 @@ export class CharactersComponent implements OnInit {
   }
   
   character: string='';
-  searchResult: Array<{name: string, img: string, char_id: number}> = [];
+  searchResult: any = [];
 
   submitBtn() {
-    this.searchResult = this.characters.filter(item => item.name === this.character)
+    this.searchResult = this.characters.filter((item: any) => item.name.toLowerCase() === this.character.toLowerCase())
     this.character = '';
     console.log(this.searchResult)
   }
